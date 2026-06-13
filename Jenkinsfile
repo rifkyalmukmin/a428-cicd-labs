@@ -26,12 +26,11 @@ pipeline {
             }
         }
 
-        stage('Deploy') { 
+        stage('Deploy') {
             steps {
-                sh './jenkins/scripts/deploy.sh'
+                sh 'npm start &'
                 sleep(time: 1, unit: 'MINUTES')
             }
         }
-
     }
 }
